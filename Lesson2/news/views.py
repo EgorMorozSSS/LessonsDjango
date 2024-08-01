@@ -28,7 +28,7 @@ def create(request):
         form = ArticlesForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('news')
+            return redirect('news_home')
         else:
             error = 'Форма была неверной'
 
@@ -37,4 +37,4 @@ def create(request):
         'form': form,
         'error': error
     }
-    return render(request, 'news/create.html',)
+    return render(request, 'news/create.html', data)
