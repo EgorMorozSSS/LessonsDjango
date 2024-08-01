@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Articles
 from .forms import ArticlesForm
-from django.views.generic import DetailView, UpdateView
+from django.views.generic import DetailView, UpdateView, DeleteView
 
 def news_home(request):
     news = Articles.objects.order_by('date')
@@ -17,6 +17,10 @@ class NewsUpdateView(UpdateView):
     template_name = 'news/create.html'
     form_class = ArticlesForm
 
+class NewsDeleteView(DeleteView):
+    model= Articles
+    success_url = '/news/'
+    template_name = 'news/news-delete.html'
 
 def create(request):
     error = ''
