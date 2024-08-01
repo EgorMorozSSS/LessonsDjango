@@ -3,6 +3,6 @@ from .models import Articles
 
 
 def news_home(request):
-    news = Articles.objects.all()
+    news = Articles.objects.order_by('date')
     return render(request, 'news/new_home.html', {'news': news})
 
