@@ -1,7 +1,10 @@
 # Исключить файлы .pyc
-Lesson2/Lesson2/__pycache__/urls.cpython-312.pyc
-Lesson2/main/__pycache__/urls.cpython-312.pyc
-Lesson2/main/__pycache__/views.cpython-312.pyc
+
 
 # Исключить всю папку LessonsDjango
 LessonsDjango/
+# Игнорировать все файлы .pyc
+*.pyc
+
+# Игнорировать все папки __pycache__
+__pycache__/
